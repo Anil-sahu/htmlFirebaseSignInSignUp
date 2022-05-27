@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fibonacci</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .active {
+        background-color: rgb(0, 255, 179);
+        border: 1px solid white;
+      }
+      a:hover {
+        background-color: rgb(1, 29, 21);
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <a href="dashbord.html" class="active">Task1</a>
+        <a href="task1.html">Task2</a>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="form-container1">
+          <div class="hint">
+            <p>
+              Pleas! enter number like this:-2,4,6,7,9 etc for find out meant,
+              median and mode
+            </p>
+          </div>
+
+          <input
+            type="text"
+            placeholder="Enter five number like 2,5,8,6,4"
+            id="FN"
+          />
+
+          <button id="sub-button" class="btn" onclick="fiveNumber()">
+            check
+          </button>
+          <div class="form-container1 box" id="box1"></div>
+        </div>
+      </div>
+      <!-- <div class="container">
+        <div class="form-container1">
+          <div class="hint">
+            <p>Pleas! enter a number for finding fibonacci series,</p>
+          </div>
+          <input type="text" placeholder="Enter a number" id="FB" />
+
+          <button id="sub-button" class="btn" onclick="fibonacci()">
+            check
+          </button>
+          <div class="form-container1 box" id="box2"></div>
+        </div>
+      </div> -->
+    </main>
+    <footer></footer>
+    <script src="index.js"></script>
+  </body>
+</html>

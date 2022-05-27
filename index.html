@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fibonacci</title>
+
+    <link rel="stylesheet" href="pages/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h2>Sign-up</h2>
+    </header>
+
+    <div class="box-container">
+      <form action="" id="form">
+        <div class="form-container">
+          <div class="signin-signup">
+            <div class="button">
+              <a href="pages/signin.html" class="acount-button">SignIn</a>
+            </div>
+            <div class="button active">
+              <a href="index.html" class="active acount-button">SignUp</a>
+            </div>
+          </div>
+
+          <br /><br />
+          <div class="input-field">
+            <a class="fa fa-user"></a>
+            <input type="text" placeholder="Enter name" id="name" />
+          </div>
+          <div class="input-field">
+            <a class="fa fa-envelope"></a>
+            <input type="email" placeholder="Enter email" id="email" />
+          </div>
+          <div class="input-field">
+            <a class="fa fa-lock"></a>
+            <input type="password" placeholder="Enter password" id="password" />
+          </div>
+
+          <button type="submit" id="subButton" class="btn">SignUp</button>
+
+          <hr />
+          <hr />
+          <a class="fa fa-google option"></a>
+          <a class="fa fa-facebook option"></a>
+          <a class="fa fa-linkedin option"></a>
+        </div>
+      </form>
+    </div>
+
+    <footer></footer>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBh_mo9Pw7rlWw_MrPH2B0wzwLE9KD56Bc",
+        authDomain: "authentication-77c58.firebaseapp.com",
+        projectId: "authentication-77c58",
+        storageBucket: "authentication-77c58.appspot.com",
+        messagingSenderId: "631260510513",
+        appId: "1:631260510513:web:28048f4fffaa760a629810",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+      subButton.addEventListener("click", signUp);
+      function signUp(e) {
+        e.preventDefault();
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("password").value;
+
+        createUserWithEmailAndPassword(auth, email, pass)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            alert("Sign-up successful");
+            window.location.href = "pages/dashbord.html";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorCode + errorMessage);
+          });
+      }
+    </script>
+  </body>
+</html>
